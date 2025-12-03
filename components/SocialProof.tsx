@@ -2,9 +2,9 @@ import React from 'react';
 import ScrollReveal from './ScrollReveal';
 
 const LOGOS = [
-  '/logos/WhatsApp Image 2025-12-03 at 16.45.50.jpeg',
-  '/logos/WhatsApp Image 2025-12-03 at 16.45.50 (1).jpeg',
-  '/logos/WhatsApp Image 2025-12-03 at 16.45.51.jpeg',
+  './logos/WhatsApp Image 2025-12-03 at 16.45.50.jpeg',
+  './logos/WhatsApp Image 2025-12-03 at 16.45.50 (1).jpeg',
+  './logos/WhatsApp Image 2025-12-03 at 16.45.51.jpeg',
 ];
 
 const SocialProof: React.FC = () => {
