@@ -1,30 +1,33 @@
 import React from 'react';
 import { SERVICES } from '../constants';
 import Button from './Button';
+import ScrollReveal from './ScrollReveal';
 
 const Services: React.FC = () => {
   return (
     <section id="experiences" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12">
-          <div className="max-w-xl">
-            <span className="text-tayo-terracotta uppercase tracking-widest text-sm font-semibold">Our Services</span>
-            <h2 className="font-serif text-4xl md:text-5xl text-tayo-grey mt-2">Gallery of Experiences</h2>
-            <p className="mt-4 text-tayo-grey/70 font-sans">
-              Curated categories designed to elevate every aspect of your professional and personal life.
-            </p>
+        <ScrollReveal animation="fade-up" duration={800}>
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div className="max-w-xl">
+              <span className="text-tayo-terracotta uppercase tracking-widest text-sm font-semibold">Our Services</span>
+              <h2 className="font-serif text-4xl md:text-5xl text-tayo-grey mt-2">Gallery of Experiences</h2>
+              <p className="mt-4 text-tayo-grey/70 font-sans">
+                Curated categories designed to elevate every aspect of your professional and personal life.
+              </p>
+            </div>
+            <div className="hidden md:block">
+               {/* Decorative element or secondary link could go here */}
+            </div>
           </div>
-          <div className="hidden md:block">
-             {/* Decorative element or secondary link could go here */}
-          </div>
-        </div>
+        </ScrollReveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {SERVICES.map((service) => (
-            <div 
-              key={service.id} 
-              className="group relative h-[400px] overflow-hidden cursor-pointer"
-            >
+          {SERVICES.map((service, index) => (
+            <ScrollReveal key={service.id} animation="fade-up" delay={index * 100} duration={800}>
+              <div
+                className="group relative h-[400px] overflow-hidden cursor-pointer"
+              >
               {/* Background Image */}
               <div 
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110"
@@ -49,6 +52,7 @@ const Services: React.FC = () => {
                 </button>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
       </div>

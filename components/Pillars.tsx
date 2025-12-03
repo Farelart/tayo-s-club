@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { Gem, UserCheck, Compass } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Pillars: React.FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -58,16 +59,18 @@ const Pillars: React.FC = () => {
         <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-16 z-10">
           
           {/* Header Area */}
-          <div className="max-w-xl">
-            <div className="flex items-center gap-3 mb-4">
-               <span className="w-8 h-[1px] bg-tayo-gold shadow-[0_0_8px_rgba(220,174,88,0.8)]"></span>
-               <span className="text-tayo-gold uppercase tracking-[0.2em] text-xs font-bold drop-shadow-md">Our Essence</span>
+          <ScrollReveal animation="fade-up" duration={1000}>
+            <div className="max-w-xl">
+              <div className="flex items-center gap-3 mb-4">
+                 <span className="w-8 h-[1px] bg-tayo-gold shadow-[0_0_8px_rgba(220,174,88,0.8)]"></span>
+                 <span className="text-tayo-gold uppercase tracking-[0.2em] text-xs font-bold drop-shadow-md">Our Essence</span>
+              </div>
+              <h2 className="font-serif text-4xl md:text-7xl text-white leading-[0.9] drop-shadow-lg">
+                The Art of <br />
+                <span className="italic font-light text-tayo-cream/90">Living Well.</span>
+              </h2>
             </div>
-            <h2 className="font-serif text-4xl md:text-7xl text-white leading-[0.9] drop-shadow-lg">
-              The Art of <br />
-              <span className="italic font-light text-tayo-cream/90">Living Well.</span>
-            </h2>
-          </div>
+          </ScrollReveal>
 
           {/* Pillars Cards (Glassmorphism) - Horizontal Scroll on Mobile, Grid on Desktop */}
           <div className="flex md:grid md:grid-cols-3 gap-4 md:gap-8 overflow-x-auto md:overflow-visible snap-x snap-mandatory pb-4 md:pb-0 -mx-6 px-6 md:mx-0 md:px-0" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
@@ -77,24 +80,25 @@ const Pillars: React.FC = () => {
               }
             `}</style>
             {pillars.map((pillar, index) => (
-              <div 
-                key={index} 
-                className="min-w-[85%] md:min-w-0 snap-center group/card relative bg-white/10 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl hover:bg-tayo-grey/60 transition-all duration-500 overflow-hidden cursor-default flex flex-col justify-between"
-              >
-                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover/card:opacity-20 transition-opacity">
-                    <div className="scale-150 transform rotate-12">{pillar.icon}</div>
-                </div>
-                
-                <div className="relative z-10">
-                  <div className="mb-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-tayo-gold/20 text-tayo-gold border border-tayo-gold/30 group-hover/card:scale-110 transition-transform duration-300">
-                    {pillar.icon}
+              <ScrollReveal key={index} animation="fade-up" delay={index * 150} duration={800}>
+                <div
+                  className="min-w-[85%] md:min-w-0 snap-center group/card relative bg-white/10 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl hover:bg-tayo-grey/60 transition-all duration-500 overflow-hidden cursor-default flex flex-col justify-between h-full"
+                >
+                  <div className="absolute top-0 right-0 p-4 opacity-10 group-hover/card:opacity-20 transition-opacity">
+                      <div className="scale-150 transform rotate-12">{pillar.icon}</div>
                   </div>
-                  <h3 className="font-serif text-2xl text-white mb-2 group-hover/card:text-tayo-gold transition-colors">{pillar.title}</h3>
-                  <p className="font-sans text-sm text-tayo-cream/80 leading-relaxed border-l border-white/20 pl-3">
-                    {pillar.text}
-                  </p>
+
+                  <div className="relative z-10">
+                    <div className="mb-4 inline-flex items-center justify-center w-10 h-10 rounded-full bg-tayo-gold/20 text-tayo-gold border border-tayo-gold/30 group-hover/card:scale-110 transition-transform duration-300">
+                      {pillar.icon}
+                    </div>
+                    <h3 className="font-serif text-2xl text-white mb-2 group-hover/card:text-tayo-gold transition-colors">{pillar.title}</h3>
+                    <p className="font-sans text-sm text-tayo-cream/80 leading-relaxed border-l border-white/20 pl-3">
+                      {pillar.text}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </ScrollReveal>
             ))}
           </div>
 

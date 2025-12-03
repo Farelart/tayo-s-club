@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './components/Layout/Navbar';
 import Footer from './components/Layout/Footer';
 import Hero from './components/Hero';
+import SocialProof from './components/SocialProof';
 import Pillars from './components/Pillars';
 import Services from './components/Services';
 import About from './components/About';
@@ -16,6 +17,7 @@ function App() {
       <main>
         <Hero />
         <Pillars />
+        <SocialProof />
         <About />
         <Services />
         <Corporate />

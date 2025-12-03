@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Building2, Plane, Users, Award, ArrowRight } from 'lucide-react';
 import Button from './Button';
+import ScrollReveal from './ScrollReveal';
 
 const CASE_STUDY_IMAGES = [
   "https://picsum.photos/id/435/800/600", // Event setup
@@ -53,36 +54,41 @@ const Corporate: React.FC = () => {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
-          <div className="max-w-2xl">
-            <span className="text-tayo-gold uppercase tracking-widest text-sm font-semibold">Corporate Solutions</span>
-            <h2 className="font-serif text-4xl md:text-5xl mt-3 leading-tight">
-              Elevate Your <br/><span className="italic text-white">Business Standards.</span>
-            </h2>
-            <p className="font-sans text-tayo-cream/70 mt-6 text-lg">
-              We extend the Tayo's Club philosophy to the corporate world, streamlining operations for executives and creating unforgettable moments for teams and clients.
-            </p>
+        <ScrollReveal animation="fade-up" duration={800}>
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-8">
+            <div className="max-w-2xl">
+              <span className="text-tayo-gold uppercase tracking-widest text-sm font-semibold">Corporate Solutions</span>
+              <h2 className="font-serif text-4xl md:text-5xl mt-3 leading-tight">
+                Elevate Your <br/><span className="italic text-white">Business Standards.</span>
+              </h2>
+              <p className="font-sans text-tayo-cream/70 mt-6 text-lg">
+                We extend the Tayo's Club philosophy to the corporate world, streamlining operations for executives and creating unforgettable moments for teams and clients.
+              </p>
+            </div>
+            <Button variant="white" className="rounded-full">
+              Contact for Business
+            </Button>
           </div>
-          <Button variant="white" className="rounded-full">
-            Contact for Business
-          </Button>
-        </div>
+        </ScrollReveal>
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {services.map((service, index) => (
-            <div key={index} className="bg-white/5 border border-white/10 p-8 rounded-sm hover:bg-white/10 transition-colors duration-300">
-              <div className="mb-6">{service.icon}</div>
-              <h3 className="font-serif text-xl text-white mb-3">{service.title}</h3>
-              <p className="font-sans text-sm text-tayo-cream/60 leading-relaxed">
-                {service.description}
-              </p>
-            </div>
+            <ScrollReveal key={index} animation="fade-up" delay={index * 100} duration={800}>
+              <div className="bg-white/5 border border-white/10 p-8 rounded-sm hover:bg-white/10 transition-colors duration-300 h-full">
+                <div className="mb-6">{service.icon}</div>
+                <h3 className="font-serif text-xl text-white mb-3">{service.title}</h3>
+                <p className="font-sans text-sm text-tayo-cream/60 leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Mini Case Study Module */}
-        <div className="bg-gradient-to-r from-tayo-gold/10 to-transparent border border-tayo-gold/20 rounded-2xl p-8 md:p-12">
+        <ScrollReveal animation="fade-up" delay={200} duration={1000}>
+          <div className="bg-gradient-to-r from-tayo-gold/10 to-transparent border border-tayo-gold/20 rounded-2xl p-8 md:p-12">
           <div className="flex flex-col lg:flex-row gap-12 items-center">
             
             <div className="flex-1 space-y-6">
@@ -156,6 +162,7 @@ const Corporate: React.FC = () => {
 
           </div>
         </div>
+        </ScrollReveal>
 
       </div>
     </section>

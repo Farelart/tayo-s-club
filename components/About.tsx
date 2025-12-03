@@ -1,4 +1,5 @@
 import React from 'react';
+import ScrollReveal from './ScrollReveal';
 
 // Curated images matching themes: African Excellence, Luxury Travel, Executive Business, High-end Service
 // Strictly Black professionals and lifestyle - Updated list to ensure availability
@@ -40,30 +41,38 @@ const About: React.FC = () => {
         
         {/* Left Column: Text Content */}
         <div className="space-y-8 order-2 lg:order-1">
-          <span className="text-tayo-gold uppercase tracking-widest text-sm font-semibold">About Us</span>
-          <h2 className="font-serif text-4xl md:text-5xl leading-tight">
-            Designed by Africans, <br/>
-            <span className="italic text-tayo-rosy">for the World.</span>
-          </h2>
-          <div className="space-y-6 font-sans text-lg text-tayo-cream/80 font-light">
-            <p>
-              We offer high-end concierge services, carefully designed to meet the unique needs of business leaders and high-net-worth individuals.
-            </p>
-            <p>
-              Imagined and developed by Africans, our approach combines the efficiency of a dedicated personal assistant with the exclusive network and expertise of a concierge.
-            </p>
-            <p>
-              Driven by a requirement for excellence and constant attention to detail, we offer incomparable personal and professional support, elevating every experience in Africa to the highest level of refinement.
-            </p>
-          </div>
-          
-          <div className="pt-4">
-             <div className="font-script text-4xl text-tayo-gold">Tayo's Club</div>
-          </div>
+          <ScrollReveal animation="fade-right" duration={800}>
+            <span className="text-tayo-gold uppercase tracking-widest text-sm font-semibold">About Us</span>
+          </ScrollReveal>
+          <ScrollReveal animation="fade-up" delay={100} duration={900}>
+            <h2 className="font-serif text-4xl md:text-5xl leading-tight">
+              Designed by Africans, <br/>
+              <span className="italic text-tayo-rosy">for the World.</span>
+            </h2>
+          </ScrollReveal>
+          <ScrollReveal animation="fade-up" delay={200} duration={800}>
+            <div className="space-y-6 font-sans text-lg text-tayo-cream/80 font-light">
+              <p>
+                We offer high-end concierge services, carefully designed to meet the unique needs of business leaders and high-net-worth individuals.
+              </p>
+              <p>
+                Imagined and developed by Africans, our approach combines the efficiency of a dedicated personal assistant with the exclusive network and expertise of a concierge.
+              </p>
+              <p>
+                Driven by a requirement for excellence and constant attention to detail, we offer incomparable personal and professional support, elevating every experience in Africa to the highest level of refinement.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal animation="blur-in" delay={400} duration={1000}>
+            <div className="pt-4">
+               <div className="font-script text-4xl text-tayo-gold">Tayo's Club</div>
+            </div>
+          </ScrollReveal>
         </div>
 
         {/* Right Column: Circular Animation */}
-        <div className="relative order-1 lg:order-2 h-[600px] flex items-center justify-center">
+        <ScrollReveal animation="zoom-in" delay={300} duration={1200} className="relative order-1 lg:order-2 h-[600px] flex items-center justify-center">
           
           {/* Decorative concentric rings - Scaled up */}
           <div className="absolute border border-tayo-gold/10 rounded-full w-[400px] h-[400px]"></div>
@@ -109,7 +118,7 @@ const About: React.FC = () => {
              })}
           </div>
 
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from './Button';
+import ScrollReveal from './ScrollReveal';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -23,25 +24,28 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
-        <div>
-          <span className="text-tayo-terracotta uppercase tracking-widest text-sm font-semibold">Contact Us</span>
-          <h2 className="font-serif text-4xl md:text-5xl text-tayo-grey mt-2 mb-6">Begin Your Journey</h2>
-          <p className="font-sans text-tayo-grey/70 mb-8 leading-relaxed">
-            Whether you are interested in membership, booking an experience, or corporate solutions, our team is ready to assist you with the utmost discretion and efficiency.
-          </p>
-          
-          <div className="bg-tayo-cream/50 p-8 rounded-sm border border-tayo-grey/5">
-             <h4 className="font-serif text-xl text-tayo-grey mb-4">Direct Contact</h4>
-             <p className="font-sans text-sm text-tayo-grey/80 mb-2">
-               <strong>Concierge Desk:</strong> +229 01 66 44 82 24
-             </p>
-             <p className="font-sans text-sm text-tayo-grey/80">
-               <strong>Email:</strong> concierge@tayosclub.com
-             </p>
-          </div>
-        </div>
+        <ScrollReveal animation="fade-right" duration={800}>
+          <div>
+            <span className="text-tayo-terracotta uppercase tracking-widest text-sm font-semibold">Contact Us</span>
+            <h2 className="font-serif text-4xl md:text-5xl text-tayo-grey mt-2 mb-6">Begin Your Journey</h2>
+            <p className="font-sans text-tayo-grey/70 mb-8 leading-relaxed">
+              Whether you are interested in membership, booking an experience, or corporate solutions, our team is ready to assist you with the utmost discretion and efficiency.
+            </p>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="bg-tayo-cream/50 p-8 rounded-sm border border-tayo-grey/5">
+               <h4 className="font-serif text-xl text-tayo-grey mb-4">Direct Contact</h4>
+               <p className="font-sans text-sm text-tayo-grey/80 mb-2">
+                 <strong>Concierge Desk:</strong> +229 01 66 44 82 24
+               </p>
+               <p className="font-sans text-sm text-tayo-grey/80">
+                 <strong>Email:</strong> concierge@tayosclub.com
+               </p>
+            </div>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal animation="fade-left" delay={200} duration={800}>
+          <form onSubmit={handleSubmit} className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label htmlFor="name" className="text-xs uppercase tracking-wider text-tayo-grey font-semibold">Full Name</label>
@@ -120,6 +124,7 @@ const Contact: React.FC = () => {
             Send Inquiry
           </Button>
         </form>
+        </ScrollReveal>
       </div>
     </section>
   );
